@@ -12,7 +12,7 @@ Experience
 2015 -
 :    **Developer and scrum master, Team Videocore, Sveriges Television AB**
 
-Team videocore at SVT is responsible for the transcoding and publishing of all VOD content for SVT's online platforms. As a developer, I take part in development and maintenance of a system of microservices that handles transcoding, packaging and publishing of VOD content.
+Team videocore at SVT is responsible for the transcoding and publishing of all Video On Demand (VOD) content for SVT's online platforms. As a developer, I take part in development and maintenance of a system of microservices that handles transcoding, packaging and publishing of VOD content.
 
 Starting in 2019, I also have the role of scrum master in team videocore. As a scrum master, I am responsible for helping the team maintain and improve the agile process, and for ensuring the team can perform at its highest level.
 
