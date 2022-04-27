@@ -1,0 +1,243 @@
+% Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+% Copyright 2014 Mark Szepieniec <http://github.com/mszep>
+% 
+% ConText style for making a resume with pandoc. Inspired by moderncv.
+% 
+% This CSS document is delivered to you under the CC BY-SA 3.0 License.
+% https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+
+\startmode[*mkii]
+  \enableregime[utf-8]  
+  \setupcolors[state=start]
+\stopmode
+
+\setupcolor[hex]
+\definecolor[titlegrey][h=757575]
+\definecolor[sectioncolor][h=397249]
+\definecolor[rulecolor][h=BBBBBB]
+
+% Enable hyperlinks
+\setupinteraction[state=start, color=sectioncolor]
+
+\setuppapersize [A4][A4]
+\setuplayout    [width=middle, height=middle,
+                 backspace=20mm, cutspace=0mm,
+                 topspace=10mm, bottomspace=20mm,
+                 header=0mm, footer=0mm]
+
+%\setuppagenumbering[location={footer,center}]
+
+\setupbodyfont[11pt, helvetica]
+
+\setupwhitespace[medium]
+
+\setupblackrules[width=31mm, height=1mm, color=rulecolor]
+
+\setuphead[chapter]      [style=\tfd]
+\setuphead[section]      [style=\tfd\bf, color=titlegrey, align=middle]
+\setuphead[subsection]   [style=\tfb\bf, color=sectioncolor, align=right,
+                          before={\leavevmode\blackrule\hspace}]
+\setuphead[subsubsection][style=\bf]
+
+\setuphead[chapter, section, subsection, subsubsection][number=no]
+
+%\setupdescriptions[width=10mm]
+
+\definedescription
+  [description]
+  [headstyle=bold, style=normal,
+   location=hanging, width=18mm, distance=14mm, margin=0cm]
+
+\setupitemize[autointro, packed]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\defineitemgroup[enumerate]
+\setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
+
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
+
+\setuptables[textwidth=max, HL=none]
+\setupxtable[frame=off,option={stretch,width}]
+
+\setupthinrules[width=15em] % width of horizontal rules
+
+\setupdelimitedtext
+  [blockquote]
+  [before={\setupalign[middle]},
+   indentnext=no,
+  ]
+
+
+\starttext
+
+\section[title={Gustav Grusell},reference={gustav-grusell}]
+
+\thinrule
+
+\startblockquote
+Highly experienced developer with a keen interest in video encoding and
+streaming technologies.
+\stopblockquote
+
+\thinrule
+
+\subsection[title={Experience},reference={experience}]
+
+\startdescription{2015 -}
+  {\bf Developer and scrum master, Team Videocore, Sveriges Television
+  AB}
+\stopdescription
+
+The videocore team at SVT is responsible for the transcoding and
+publishing of all VOD content for SVT's online platforms. As a
+developer, I take part in development and maintenance of a system of
+microservices that handles transcoding, packaging and publishing of VOD
+content. The majority of the microservices are built with
+gradle/kotlin/spring boot. Frequently used technologies are MariaDB,
+redis, elastic search and Apache Kafka. While mostly doing backend
+development, I also do smaller amounts of frontend development of
+internal tools with JS and React.
+
+Starting in 2019, I also have the role of scrum master in the videocore
+team. As a scrum master, I am responsible for helping the team maintain
+and improve the agile process, and for ensuring the team can perform at
+its highest level.
+
+During my time at SVT I have acquired both solid knowledge about, as
+well as a keen interest in, video encoding and streaming technologies.
+
+Some of the highlights from my time at SVT:
+
+\startitemize
+\item
+  Building
+  \useURL[url1][https://github.com/svt/encore][][Encore]\from[url1], our
+  own open source transcoding solution based on FFmpeg, and migration to
+  encore from our previous proprietary solution.
+\item
+  Transitioning the video workflow from external packaging (dash/hls) to
+  handling packaging ourselves with shaka packager.
+\item
+  Implementing hevc-transcoding to increase visual quality and decrease
+  bandwidth
+\item
+  Development of machine-learning based tool for end credits detection.
+\stopitemize
+
+\startdescription{2014 - 2015}
+  {\bf Senior Lead Developer, Bisnode Sverige AB}
+\stopdescription
+
+Development of a system for distribution of business data. I have taken
+big responsibility in development of new subsystems. Development was
+done using Java, Groovy and Spring. I worked as part of a small agile
+team.
+
+\startdescription{2010 - 2014}
+  {\bf Java developer, Smartstream Technologies GmbH, Austria}
+\stopdescription
+
+Development of account reconciliations systems for customers in finance.
+System was first deployed on Gigaspaces but was then migrated to JBoss
+Fuse. I lead the work in optimizing the software for resource
+utilization and throughput, and the migration from Gigaspaces XAP to
+Fuse Fabric. Development was done with Java and Spring.
+
+\startdescription{2006 - 2008}
+  {\bf Software Consultant, Gnistra AB}
+\stopdescription
+
+Worked with Java development with JSF, hibernate, as well as development
+of industrial ultrasonic measuring systems with LabView. Independent
+work in smaller projects in close collaboration with customers.
+
+\startdescription{2004 - 2006}
+  {\bf Research scientist, environmental modeling, ESS GmbH, Austria}
+\stopdescription
+
+ESS is a software company specialized in systems for environmental data
+and environmental modeling. The work was mainly development of software
+processing for simulating environmental processed, and development of
+web-based user interface for the simulations. The work included
+numerical modeling in c++, user interface development in PHP and JAVA,
+and database management with MySQL.
+
+\subsection[title={Education},reference={education}]
+
+\startdescription{2013 - 2014}
+  {\bf Master's program in Social-Ecological Resilience for Sustainable
+  Development, Stockholm Resilience Center}
+\stopdescription
+
+\startdescription{2009}
+  {\bf German language, Vienna university}
+\stopdescription
+
+\startdescription{1996 - 2003}
+  {\bf Master's Program in Environmental and Water Engineering, Uppsala
+  University}
+\stopdescription
+
+\subsection[title={Technical
+Experience},reference={technical-experience}]
+
+\startdescription{{\bf Programming Languages}}
+  Java, Kotlin, JavaScript, c++, Groovy, python, Labview/G, bash,
+  emacs-lisp, clojure, R
+\stopdescription
+
+\startdescription{{\bf Frameworks}}
+  Spring-boot, React
+\stopdescription
+
+\startdescription{{\bf Technologies}}
+  Docker, Kubernetes, FFmpeg, Apache Kafka, MySql/MariaDB, Redis,
+  Elastic Search, Cassandra, Oracle, MSSQL, Apache cassandra
+\stopdescription
+
+\subsection[title={Open Source
+Projects},reference={open-source-projects}]
+
+\startdescription{{\bf Encore}}
+  A scalable video transcoding tool, built around FFmpeg. Built by the
+  videocore team at SVT.
+  \useURL[url2][https://github.com/svt/encore]\from[url2]
+\stopdescription
+
+\startdescription{{\bf Vivict}}
+  An easy to use in-browser tool for subjective comparison of the visual
+  quality of different encodings of the same video source. Built with
+  react and js. I created this because I saw a need for simple free tool
+  for comparing video quality.
+  \useURL[url3][https://github.com/svt/vivict]\from[url3]
+\stopdescription
+
+\startdescription{{\bf Vivict++}}
+  An easy to use desktop tool for subjective comparison of the visual
+  quality of different encodings of the same video source. Based on
+  ffmpeg/libav, it supports a much wider range of codecs and formats
+  than vivict. Built in c++.
+  \useURL[url4][https://github.com/svt/vivictpp]\from[url4]
+\stopdescription
+
+\subsection[title={Human Languages},reference={human-languages}]
+
+\startitemize[packed]
+\item
+  Swedish - native speaker
+\item
+  English - fluent
+\item
+  German - fluent
+\stopitemize
+
+\thinrule
+
+\startblockquote
+\useURL[url5][mailto:gustav.grusell@gmail.com][][gustav.grusell@gmail.com]\from[url5]
+• +46 736401141 www.linkedin.com/in/gustavgrusell •
+https://github.com/grusell/
+\stopblockquote
+
+\stoptext
